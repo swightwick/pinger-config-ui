@@ -45,9 +45,9 @@ const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({ className, children, ...props }, ref) => {
-  const contentRef = React.useRef<HTMLDivElement>(null)
-  const innerRef = React.useRef<HTMLDivElement>(null)
-  const isAnimating = React.useRef(false)
+  const contentRef = React.useRef<HTMLDivElement | null>(null)
+  const innerRef = React.useRef<HTMLDivElement | null>(null)
+  const isAnimating = React.useRef<boolean>(false)
 
   React.useEffect(() => {
     const content = contentRef.current

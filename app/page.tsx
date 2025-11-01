@@ -60,17 +60,24 @@ export default function Home() {
   const [saveMessage, setSaveMessage] = useState<string>('')
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false)
   const [globalKeywordSort, setGlobalKeywordSort] = useState<'name' | 'discount'>('name')
-  const [channelKeywordSort, setChannelKeywordSort] = useState<'name' | 'discount'>('name')
   const [editingGlobalKeyword, setEditingGlobalKeyword] = useState<string | null>(null)
   const [tempGlobalKeywordValue, setTempGlobalKeywordValue] = useState<string>('')
   const [tempGlobalKeywordDiscount, setTempGlobalKeywordDiscount] = useState<string>('0')
+  const [editingChannelKeyword, setEditingChannelKeyword] = useState<{channelId: string, idx: number} | null>(null)
+  const [tempChannelKeywordValue, setTempChannelKeywordValue] = useState<string>('')
+  const [tempChannelKeywordDiscount, setTempChannelKeywordDiscount] = useState<string>('0')
   const [globalOpen, setGlobalOpen] = useState<string | undefined>('global')
   const [channelOpen, setChannelOpen] = useState<string | undefined>('channel')
   const [negativeOpen, setNegativeOpen] = useState<string | undefined>('negative')
   const [blacklistOpen, setBlacklistOpen] = useState<string | undefined>('blacklist')
   const [newKeywordInput, setNewKeywordInput] = useState<string>('')
-  const [newKeywordDiscount, setNewKeywordDiscount] = useState<string>('0')
+  const [newKeywordDiscount, setNewKeywordDiscount] = useState<string>('')
   const [showNewKeywordForm, setShowNewKeywordForm] = useState(false)
+  const [showNewChannelKeywordForm, setShowNewChannelKeywordForm] = useState<string | null>(null)
+  const [newChannelKeywordInput, setNewChannelKeywordInput] = useState<string>('')
+  const [newChannelKeywordDiscount, setNewChannelKeywordDiscount] = useState<string>('')
+  const channelIdInputRefs = useRef<{[key: string]: HTMLInputElement | null}>({})
+  const [focusChannelId, setFocusChannelId] = useState<string | null>(null)
 
   useEffect(() => {
     fetch('/configs.json')
@@ -78,6 +85,11 @@ export default function Home() {
       .then(data => {
         setConfigs(data)
         setOriginalConfigs(data)
+        // Auto-select the first (and only) user
+        const userIds = Object.keys(data)
+        if (userIds.length > 0) {
+          setSelectedUserId(userIds[0])
+        }
         setLoading(false)
       })
       .catch(err => {
@@ -92,7 +104,29 @@ export default function Home() {
     }
   }, [configs, originalConfigs])
 
+  useEffect(() => {
+    if (focusChannelId !== null) {
+      const input = channelIdInputRefs.current[focusChannelId]
+      if (input) {
+        input.focus()
+        setFocusChannelId(null)
+      }
+    }
+  }, [focusChannelId])
+
   const handleSave = async () => {
+    if (!configs || !selectedUserId) return
+
+    // Validate all channel IDs are 19 digits
+    const userConfig = configs[selectedUserId]
+    const invalidChannels = Object.keys(userConfig.channel_keywords).filter(id => id.length !== 19)
+
+    if (invalidChannels.length > 0) {
+      setSaveMessage('✗ All Channel IDs must be 19 digits')
+      setTimeout(() => setSaveMessage(''), 3000)
+      return
+    }
+
     setSaving(true)
     setSaveMessage('')
     try {
@@ -172,7 +206,7 @@ export default function Home() {
 
     // Reset form
     setNewKeywordInput('')
-    setNewKeywordDiscount('0')
+    setNewKeywordDiscount('')
     setShowNewKeywordForm(false)
   }
 
@@ -200,15 +234,34 @@ export default function Home() {
     const channelKeywords = { ...userConfig.channel_keywords }
 
     if (oldChannelId !== newChannelId) {
-      const keywords = channelKeywords[oldChannelId]
-      delete channelKeywords[oldChannelId]
-      channelKeywords[newChannelId] = keywords
+      // Preserve order by rebuilding the object with the same key order
+      const entries = Object.entries(channelKeywords)
+      const newChannelKeywords: Record<string, ChannelKeyword[]> = {}
+
+      for (const [key, value] of entries) {
+        if (key === oldChannelId) {
+          newChannelKeywords[newChannelId] = value
+        } else {
+          newChannelKeywords[key] = value
+        }
+      }
+
+      userConfig.channel_keywords = newChannelKeywords
+
+      // Update the form state if it's open for this channel
+      if (showNewChannelKeywordForm === oldChannelId) {
+        setShowNewChannelKeywordForm(newChannelId)
+      }
+    } else {
+      userConfig.channel_keywords = channelKeywords
     }
 
-    userConfig.channel_keywords = channelKeywords
     newConfigs[userId] = userConfig
 
     setConfigs(newConfigs)
+
+    // Mark this channel ID for focus restoration
+    setFocusChannelId(newChannelId)
   }
 
   const deleteChannelKeyword = (userId: string, channelId: string, idx: number) => {
@@ -234,19 +287,24 @@ export default function Home() {
   }
 
   const addChannelKeyword = (userId: string, channelId: string) => {
-    if (!configs) return
+    if (!configs || !newChannelKeywordInput.trim()) return
 
     const newConfigs = { ...configs }
     const userConfig = { ...newConfigs[userId] }
     const channelKeywords = { ...userConfig.channel_keywords }
     const keywords = [...(channelKeywords[channelId] || [])]
 
-    keywords.push({ keyword: '', discount: 0 })
+    keywords.push({ keyword: newChannelKeywordInput.trim(), discount: parseInt(newChannelKeywordDiscount) || 0 })
     channelKeywords[channelId] = keywords
     userConfig.channel_keywords = channelKeywords
     newConfigs[userId] = userConfig
 
     setConfigs(newConfigs)
+
+    // Reset form
+    setNewChannelKeywordInput('')
+    setNewChannelKeywordDiscount('')
+    setShowNewChannelKeywordForm(null)
   }
 
   const addNewChannel = (userId: string) => {
@@ -256,18 +314,27 @@ export default function Home() {
     const userConfig = { ...newConfigs[userId] }
     const channelKeywords = { ...userConfig.channel_keywords }
 
-    let counter = 1
-    let newChannelId = `channel-${counter}`
-    while (channelKeywords[newChannelId]) {
-      counter++
-      newChannelId = `channel-${counter}`
+    // Start with empty string for new channel ID
+    const newChannelId = ''
+
+    // Add new channel at the end
+    const newChannelKeywords: Record<string, ChannelKeyword[]> = {}
+
+    // Copy existing channels first
+    for (const [key, value] of Object.entries(channelKeywords)) {
+      newChannelKeywords[key] = value
     }
 
-    channelKeywords[newChannelId] = [{ keyword: '', discount: 0 }]
-    userConfig.channel_keywords = channelKeywords
+    // Add new channel at the end
+    newChannelKeywords[newChannelId] = []
+
+    userConfig.channel_keywords = newChannelKeywords
     newConfigs[userId] = userConfig
 
     setConfigs(newConfigs)
+
+    // Open the add keyword form for the new channel
+    setShowNewChannelKeywordForm(newChannelId)
   }
 
   const updateNegativeKeyword = (userId: string, idx: number, keyword: string) => {
@@ -390,13 +457,6 @@ export default function Home() {
     return [...sorted, ...beingEdited]
   }
 
-  const sortChannelKeywords = (keywords: ChannelKeyword[]) => {
-    if (channelKeywordSort === 'name') {
-      return [...keywords].sort((a, b) => a.keyword.localeCompare(b.keyword))
-    } else {
-      return [...keywords].sort((a, b) => b.discount - a.discount)
-    }
-  }
 
   return (
     <div className="min-h-screen bg-dark-navy py-8 px-4">
@@ -406,27 +466,11 @@ export default function Home() {
             <img src="/paragn-logo-white.png" alt="Paragon Logo" className="h-8 md:h-12" />
             <div>
               <h1 className="text-lg md:text-4xl font-bold text-white mb-2">Pinger config</h1>
-              <p className="text-gray-400">Total Users: {Object.keys(configs).length}</p>
+              {selectedUserId && (
+                <p className="text-gray-400">User: {selectedUserId}</p>
+              )}
             </div>
           </div>
-
-        <div className="mb-0">
-          <select
-            value={selectedUserId}
-            onChange={(e) => setSelectedUserId(e.target.value)}
-            className="w-full max-w-xl px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent bg-gray-900 text-white"
-          >
-            <option value="">Select a user...</option>
-            {Object.keys(configs).map(userId => (
-              <option key={userId} value={userId}>{userId}</option>
-            ))}
-          </select>
-              {/* <h2 className="text-xl font-semibold text-white mb-4">
-                User ID: {selectedUserId}
-              </h2> */}
-
-
-        </div>
 
           <div className="flex items-center gap-4">
             {hasUnsavedChanges && !saveMessage && (
@@ -450,12 +494,6 @@ export default function Home() {
           </div>
         </div>
 
-        {!selectedUserId && (
-          <div className="text-center text-gray-500 mt-16">
-            Please select a user from the dropdown above.
-          </div>
-        )}
-
         <div className="space-y-6">
           {selectedUser.map(([userId, config]) => (
             <div key={userId} className="">
@@ -473,7 +511,7 @@ export default function Home() {
                       <AccordionTrigger className="text-lg font-semibold text-gray-300 hover:no-underline">
                         <div className="flex items-center justify-between w-full pr-3">
                           <div className="flex items-center gap-2">
-                            <span className="flex items-center justify-center bg-gray-700 rounded-full w-6 h-6 text-xs text-gray-300">
+                            <span className="flex items-center justify-center bg-gray-700 rounded-full w-8 h-8 text-sm text-white font-bold">
                               {Object.keys(config.global_keywords).length}
                             </span>
                             Global Keywords
@@ -520,7 +558,7 @@ export default function Home() {
                               } else if (e.key === 'Escape') {
                                 setShowNewKeywordForm(false)
                                 setNewKeywordInput('')
-                                setNewKeywordDiscount('0')
+                                setNewKeywordDiscount('')
                               }
                             }}
                             placeholder="Keyword name"
@@ -541,10 +579,10 @@ export default function Home() {
                               } else if (e.key === 'Escape') {
                                 setShowNewKeywordForm(false)
                                 setNewKeywordInput('')
-                                setNewKeywordDiscount('0')
+                                setNewKeywordDiscount('')
                               }
                             }}
-                            placeholder="0"
+                            placeholder="50"
                             className="text-gray-200 bg-black px-2 py-2 rounded border border-gray-700 focus:border-gray-500 outline-none w-16"
                           />
                           <span className="text-sm text-gray-400">% off</span>
@@ -559,7 +597,7 @@ export default function Home() {
                             onClick={() => {
                               setShowNewKeywordForm(false)
                               setNewKeywordInput('')
-                              setNewKeywordDiscount('0')
+                              setNewKeywordDiscount('')
                             }}
                             className="px-4 py-2 bg-gray-700 text-gray-300 rounded hover:bg-gray-600"
                             type='button'
@@ -596,7 +634,7 @@ export default function Home() {
                                     setEditingGlobalKeyword(null)
                                   }}
                                   placeholder="Keyword name"
-                                  className="flex-1 text-gray-200 bg-black px-2 py-2 rounded border border-gray-700 focus:border-gray-500 outline-none"
+                                  className="flex-1 min-w-0 text-gray-200 bg-black px-2 py-2 rounded border border-gray-700 focus:border-gray-500 outline-none text-sm"
                                   autoFocus
                                 />
                                 <input
@@ -624,15 +662,15 @@ export default function Home() {
                                     setEditingGlobalKeyword(null)
                                   }}
                                   placeholder="0"
-                                  className="text-gray-200 bg-black px-2 py-2 rounded border border-gray-700 focus:border-gray-500 outline-none w-16"
+                                  className="text-gray-200 bg-black px-2 py-2 rounded border border-gray-700 focus:border-gray-500 outline-none w-12 flex-shrink-0 text-sm"
                                 />
-                                <span className="text-sm text-gray-400">% off</span>
+                                <span className="text-xs text-gray-400 flex-shrink-0 whitespace-nowrap">% off</span>
                                 <button
                                   onClick={() => {
                                     updateGlobalKeyword(userId, keyword, tempGlobalKeywordValue, parseInt(tempGlobalKeywordDiscount) || 0, true)
                                     setEditingGlobalKeyword(null)
                                   }}
-                                  className="px-3 py-1 bg-transparent text-green-500 rounded hover:text-green-400 text-sm text-xl"
+                                  className="px-2 py-1 bg-transparent text-green rounded hover:text-green text-xl flex-shrink-0"
                                   type='button'
                                 >
                                   ✓
@@ -689,7 +727,7 @@ export default function Home() {
                       <AccordionTrigger className="text-lg font-semibold text-gray-300 hover:no-underline">
                         <div className="flex items-center justify-between w-full pr-3">
                           <div className="flex items-center gap-2">
-                            <span className="flex items-center justify-center bg-gray-700 rounded-full w-6 h-6 text-xs text-gray-300">
+                            <span className="flex items-center justify-center bg-gray-700 rounded-full w-8 h-8 text-sm text-white font-bold">
                               {config.negative_keywords.length}
                             </span>
                             Negative Keywords
@@ -754,96 +792,225 @@ export default function Home() {
                       <AccordionTrigger className="text-lg font-semibold text-gray-300 hover:no-underline">
                         <div className="flex items-center justify-between w-full pr-3">
                           <div className="flex items-center gap-2">
-                            <span className="flex items-center justify-center bg-gray-700 rounded-full w-6 h-6 text-xs text-gray-300">
+                            <span className="flex items-center justify-center bg-gray-700 rounded-full w-8 h-8 text-base text-white font-bold">
                               {Object.keys(config.channel_keywords).length}
                             </span>
                             Channel Keywords
                           </div>
                           {channelOpen === 'channel' && (
-                            <div className="flex items-center gap-2 animate-in fade-in duration-300">
-                              <select
-                                value={channelKeywordSort}
-                                onChange={(e) => {
-                                  e.stopPropagation()
-                                  setChannelKeywordSort(e.target.value as 'name' | 'discount')
-                                }}
-                                onClick={(e) => e.stopPropagation()}
-                                className="px-3 py-1 bg-gray-800 border border-gray-700 text-gray-300 rounded text-sm hover:bg-gray-700"
-                              >
-                                <option value="name">Name</option>
-                                <option value="discount">% Off</option>
-                              </select>
-                              <button
-                                onClick={(e) => {
-                                  e.stopPropagation()
-                                  addNewChannel(userId)
-                                }}
-                                type='button'
-                                className="btn"
-                              >
-                                +
-                              </button>
-                            </div>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                addNewChannel(userId)
+                              }}
+                              type='button'
+                              className="btn animate-in fade-in duration-300"
+                            >
+                              +
+                            </button>
                           )}
                         </div>
                       </AccordionTrigger>
                       <AccordionContent>
                     {Object.keys(config.channel_keywords).length > 0 ? (
                       <div className="space-y-3">
-                        {Object.entries(config.channel_keywords).map(([channelId, keywords], channelIdx) => (
-                          <AnimatedItem key={`${userId}-channel-${channelIdx}`} itemKey={`${userId}-channel-${channelIdx}`}>
+                        {Object.entries(config.channel_keywords).map(([channelId, keywords], idx) => (
+                          <AnimatedItem key={`${userId}-channel-${idx}`} itemKey={`${userId}-channel-${idx}`}>
                             <div className="bg-gradient-card p-3 rounded border border-border">
                             <div className="text-sm mb-2 flex justify-between items-center">
                               <div className="flex items-center gap-2">
                                 <span className="text-gray-500">Channel:</span>
                                 <input
+                                  ref={(el) => {
+                                    channelIdInputRefs.current[channelId] = el
+                                  }}
                                   type="text"
                                   value={channelId}
-                                  onChange={(e) => updateChannelId(userId, channelId, e.target.value)}
-                                  placeholder="Channel number (19 digits)"
-                                  className="text-gray-200 bg-black px-2 py-2 rounded border border-border focus:border-gray-600 outline-none w-[200px]"
+                                  onChange={(e) => {
+                                    const value = e.target.value.replace(/\D/g, '')
+                                    if (value.length <= 19) {
+                                      updateChannelId(userId, channelId, value)
+                                    }
+                                  }}
+                                  placeholder="Channel ID"
+                                  autoFocus={channelId.length === 0}
+                                  className={`text-gray-200 bg-black px-2 py-2 rounded border outline-none w-[200px] ${
+                                    channelId.length === 19 ? 'border-gray-700 focus:border-gray-600' : 'border-orange-500 focus:border-orange-400'
+                                  }`}
                                 />
                               </div>
                               <button
-                                onClick={() => addChannelKeyword(userId, channelId)}
+                                onClick={() => setShowNewChannelKeywordForm(channelId)}
                                 className="btn-sm"
                                 type='button'
                               >
                                 + Keyword
                               </button>
                             </div>
-                            {sortChannelKeywords(keywords).map((kw) => {
-                              const idx = keywords.findIndex(k => k.keyword === kw.keyword && k.discount === kw.discount)
-                              return (
-                                <div key={idx} className="flex gap-2 items-center mb-2">
+                            {showNewChannelKeywordForm === channelId && (
+                              <div className={`p-3 bg-gradient-card rounded border border-border ${keywords.length > 0 ? 'mb-4' : ''}`}>
+                                <div className="flex items-center gap-2">
                                   <input
                                     type="text"
-                                    value={kw.keyword}
-                                    onChange={(e) => updateChannelKeyword(userId, channelId, idx, e.target.value, kw.discount)}
-                                    placeholder="Keyword text"
-                                    className="text-gray-200 bg-black px-2 py-2 rounded border border-gray-700 focus:border-gray-600 outline-none flex-1"
+                                    value={newChannelKeywordInput}
+                                    onChange={(e) => setNewChannelKeywordInput(e.target.value)}
+                                    onKeyDown={(e) => {
+                                      if (e.key === 'Enter') {
+                                        addChannelKeyword(userId, channelId)
+                                      } else if (e.key === 'Escape') {
+                                        setShowNewChannelKeywordForm(null)
+                                        setNewChannelKeywordInput('')
+                                        setNewChannelKeywordDiscount('')
+                                      }
+                                    }}
+                                    placeholder="Keyword name"
+                                    className="flex-1 text-gray-200 bg-black px-2 py-2 rounded border border-gray-700 focus:border-gray-500 outline-none"
+                                    autoFocus={channelId.length === 19}
                                   />
                                   <input
                                     type="text"
                                     inputMode="numeric"
-                                    value={kw.discount}
+                                    value={newChannelKeywordDiscount}
                                     onChange={(e) => {
                                       const value = e.target.value.replace(/\D/g, '')
-                                      updateChannelKeyword(userId, channelId, idx, kw.keyword, value === '' ? 0 : parseInt(value))
+                                      setNewChannelKeywordDiscount(value)
                                     }}
-                                    className="text-gray-200 bg-black px-2 py-2 rounded border border-gray-700 focus:border-gray-600 outline-none text-sm w-16"
+                                    onKeyDown={(e) => {
+                                      if (e.key === 'Enter') {
+                                        addChannelKeyword(userId, channelId)
+                                      } else if (e.key === 'Escape') {
+                                        setShowNewChannelKeywordForm(null)
+                                        setNewChannelKeywordInput('')
+                                        setNewChannelKeywordDiscount('')
+                                      }
+                                    }}
+                                    placeholder="0"
+                                    className="text-gray-200 bg-black px-2 py-2 rounded border border-gray-700 focus:border-gray-500 outline-none w-16"
                                   />
-                                  <span className="text-gray-400 text-sm">% off</span>
+                                  <span className="text-sm text-gray-400">% off</span>
                                   <button
-                                    onClick={() => deleteChannelKeyword(userId, channelId, idx)}
-                                    className="text-red-400 hover:text-red-300"
+                                    onClick={() => addChannelKeyword(userId, channelId)}
+                                    className="px-4 py-2 border border-green text-green rounded hover:bg-green-700 font-medium"
                                     type='button'
                                   >
-                                    ×
+                                    Add
+                                  </button>
+                                  <button
+                                    onClick={() => {
+                                      setShowNewChannelKeywordForm(null)
+                                      setNewChannelKeywordInput('')
+                                      setNewChannelKeywordDiscount('')
+                                    }}
+                                    className="px-4 py-2 border border-red-500 text-red-500 rounded hover:bg-gray-600"
+                                    type='button'
+                                  >
+                                    Cancel
                                   </button>
                                 </div>
+                              </div>
+                            )}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
+                            {keywords.map((kw) => {
+                              const idx = keywords.findIndex(k => k.keyword === kw.keyword && k.discount === kw.discount)
+                              const isEditing = editingChannelKeyword?.channelId === channelId && editingChannelKeyword?.idx === idx
+                              return (
+                                <AnimatedItem key={`${userId}-channel-${channelId}-${idx}`} itemKey={`${userId}-channel-${channelId}-${idx}`}>
+                                  {isEditing ? (
+                                    <div className="flex items-center gap-2 bg-gradient-card px-3 py-2 rounded border border-border">
+                                      <input
+                                        type="text"
+                                        value={tempChannelKeywordValue}
+                                        onChange={(e) => setTempChannelKeywordValue(e.target.value)}
+                                        onKeyDown={(e) => {
+                                          if (e.key === 'Enter') {
+                                            updateChannelKeyword(userId, channelId, idx, tempChannelKeywordValue, parseInt(tempChannelKeywordDiscount) || 0)
+                                            setEditingChannelKeyword(null)
+                                          } else if (e.key === 'Escape') {
+                                            setEditingChannelKeyword(null)
+                                          }
+                                        }}
+                                        onBlur={(e) => {
+                                          const relatedTarget = e.relatedTarget as HTMLElement
+                                          if (relatedTarget && relatedTarget.closest('.flex.items-center.gap-2') === e.currentTarget.closest('.flex.items-center.gap-2')) {
+                                            return
+                                          }
+                                          setEditingChannelKeyword(null)
+                                        }}
+                                        placeholder="Keyword name"
+                                        className="flex-1 min-w-0 text-gray-200 bg-black px-2 py-2 rounded border border-gray-700 focus:border-gray-500 outline-none text-sm"
+                                        autoFocus
+                                      />
+                                      <input
+                                        type="text"
+                                        inputMode="numeric"
+                                        value={tempChannelKeywordDiscount}
+                                        onChange={(e) => {
+                                          const value = e.target.value.replace(/\D/g, '')
+                                          setTempChannelKeywordDiscount(value)
+                                        }}
+                                        onKeyDown={(e) => {
+                                          if (e.key === 'Enter') {
+                                            updateChannelKeyword(userId, channelId, idx, tempChannelKeywordValue, parseInt(tempChannelKeywordDiscount) || 0)
+                                            setEditingChannelKeyword(null)
+                                          } else if (e.key === 'Escape') {
+                                            setEditingChannelKeyword(null)
+                                          }
+                                        }}
+                                        onBlur={(e) => {
+                                          const relatedTarget = e.relatedTarget as HTMLElement
+                                          if (relatedTarget && relatedTarget.closest('.flex.items-center.gap-2') === e.currentTarget.closest('.flex.items-center.gap-2')) {
+                                            return
+                                          }
+                                          setEditingChannelKeyword(null)
+                                        }}
+                                        placeholder="0"
+                                        className="text-gray-200 bg-black px-2 py-2 rounded border border-gray-700 focus:border-gray-500 outline-none w-12 flex-shrink-0 text-sm"
+                                      />
+                                      <span className="text-xs text-gray-400 flex-shrink-0 whitespace-nowrap">% off</span>
+                                      <button
+                                        onClick={() => {
+                                          updateChannelKeyword(userId, channelId, idx, tempChannelKeywordValue, parseInt(tempChannelKeywordDiscount) || 0)
+                                          setEditingChannelKeyword(null)
+                                        }}
+                                        className="px-2 py-1 bg-transparent text-green rounded hover:text-green text-xl flex-shrink-0"
+                                        type='button'
+                                      >
+                                        ✓
+                                      </button>
+                                    </div>
+                                  ) : (
+                                    <div className="flex items-center justify-between gap-2 bg-gradient-card px-3 py-2 rounded border border-border">
+                                      <span className="text-gray-200 font-medium">{kw.keyword}</span>
+                                      <div className="flex items-center gap-2">
+                                        <span className={`text-sm ${kw.discount === 0 ? 'text-red-400' : 'text-gray-400'}`}>{kw.discount}% off</span>
+                                        <button
+                                          onClick={() => {
+                                            setEditingChannelKeyword({channelId, idx})
+                                            setTempChannelKeywordValue(kw.keyword)
+                                            setTempChannelKeywordDiscount(kw.discount.toString())
+                                          }}
+                                          type='button'
+                                          className="text-gray-400 hover:text-gray-200"
+                                        >
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                          </svg>
+                                        </button>
+                                        <button
+                                          onClick={() => deleteChannelKeyword(userId, channelId, idx)}
+                                          type='button'
+                                          className="text-red-400 hover:text-red-300"
+                                        >
+                                          ×
+                                        </button>
+                                      </div>
+                                    </div>
+                                  )}
+                                </AnimatedItem>
                               )
                             })}
+                            </div>
                             </div>
                           </AnimatedItem>
                         ))}
@@ -866,7 +1033,7 @@ export default function Home() {
                       <AccordionTrigger className="text-lg font-semibold text-gray-300 hover:no-underline">
                         <div className="flex items-center justify-between w-full pr-3">
                           <div className="flex items-center gap-2">
-                            <span className="flex items-center justify-center bg-gray-700 rounded-full w-6 h-6 text-xs text-gray-300">
+                            <span className="flex items-center justify-center bg-gray-700 rounded-full w-8 h-8 text-sm text-white font-bold">
                               {config.blacklisted_channels.length}
                             </span>
                             Blacklisted Channels
