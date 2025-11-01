@@ -1,0 +1,49 @@
+{
+  "692666006673293313": {
+    "global_keywords": {
+      "adidas": {
+        "discount": 50
+      },
+      "nike": {
+        "discount": 50
+      },
+      "jordan": {
+        "discount": 30
+      }
+    },
+    "channel_keywords": {
+      "3434234234434244345": [
+        {
+          "keyword": "pokemon",
+          "discount": 0
+        },
+        {
+          "keyword": "test",
+          "discount": 100
+        }
+      ],
+      "1426960653368692764": [
+        {
+          "keyword": "nike",
+          "discount": 50
+        }
+      ]
+    },
+    "negative_keywords": [
+      "yeezy",
+      "barbour",
+      "uk4",
+      "air force"
+    ],
+    "blacklisted_channels": [
+      {
+        "channel_id": "1426960653368692767",
+        "nickname": "nickname"
+      },
+      {
+        "channel_id": "1426960653368692724",
+        "nickname": "rubbish channel"
+      }
+    ]
+  }
+}
