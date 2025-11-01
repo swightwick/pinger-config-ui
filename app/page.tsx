@@ -52,6 +52,9 @@ function AnimatedItem({ children, itemKey }: { children: React.ReactNode; itemKe
 }
 
 export default function Home() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [passwordInput, setPasswordInput] = useState('')
+  const [passwordError, setPasswordError] = useState(false)
   const [configs, setConfigs] = useState<ConfigData | null>(null)
   const [originalConfigs, setOriginalConfigs] = useState<ConfigData | null>(null)
   const [loading, setLoading] = useState(true)
@@ -78,6 +81,31 @@ export default function Home() {
   const [newChannelKeywordDiscount, setNewChannelKeywordDiscount] = useState<string>('')
   const channelIdInputRefs = useRef<{[key: string]: HTMLInputElement | null}>({})
   const [focusChannelId, setFocusChannelId] = useState<string | null>(null)
+
+  const handlePasswordSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    try {
+      const response = await fetch('/api/verify-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ password: passwordInput }),
+      })
+
+      if (response.ok) {
+        setIsAuthenticated(true)
+        setPasswordError(false)
+      } else {
+        setPasswordError(true)
+        setPasswordInput('')
+      }
+    } catch (err) {
+      setPasswordError(true)
+      setPasswordInput('')
+    }
+  }
 
   useEffect(() => {
     fetch('/configs.json')
@@ -419,6 +447,43 @@ export default function Home() {
     newConfigs[userId] = userConfig
 
     setConfigs(newConfigs)
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-dark-navy flex items-center justify-center">
+        <div className="w-full max-w-md p-8">
+          <div className="flex justify-center mb-8">
+            <img src="/paragn-logo-white.png" alt="Paragon Logo" className="h-16" />
+          </div>
+          <form onSubmit={handlePasswordSubmit} className="bg-gradient-card border border-border rounded-lg p-6">
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">Enter Password</h2>
+            <input
+              type="password"
+              value={passwordInput}
+              onChange={(e) => {
+                setPasswordInput(e.target.value)
+                setPasswordError(false)
+              }}
+              placeholder="Password"
+              className={`w-full text-gray-200 bg-black px-4 py-3 rounded border outline-none mb-4 ${
+                passwordError ? 'border-red-500' : 'border-gray-700 focus:border-gray-600'
+              }`}
+              autoFocus
+            />
+            {passwordError && (
+              <p className="text-red-400 text-sm mb-4">Incorrect password</p>
+            )}
+            <button
+              type="submit"
+              className="w-full px-6 py-3 bg-green text-black rounded-lg hover:bg-gray-200 font-medium"
+            >
+              Enter
+            </button>
+          </form>
+        </div>
+      </div>
+    )
   }
 
   if (loading) {
