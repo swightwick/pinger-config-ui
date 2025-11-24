@@ -1,5 +1,12 @@
 import type { Metadata } from 'next'
+import { Mulish } from 'next/font/google'
 import './globals.css'
+import { Providers } from './providers'
+
+const mulish = Mulish({
+  subsets: ['latin'],
+  variable: '--font-mulish',
+})
 
 export const metadata: Metadata = {
   title: 'Pinger config',
@@ -13,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${mulish.variable} font-sans`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }

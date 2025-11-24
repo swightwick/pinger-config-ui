@@ -1,49 +1,3466 @@
 {
   "692666006673293313": {
     "global_keywords": {
+      "test": {
+        "discount": 30
+      },
       "adidas": {
         "discount": 50
       },
       "nike": {
         "discount": 50
-      },
-      "jordan": {
-        "discount": 30
       }
     },
     "channel_keywords": {
-      "3434234234434244345": [
+      "1426960653368692767": [
         {
-          "keyword": "pokemon",
-          "discount": 0
+          "keyword": "yeezy",
+          "discount": 50
         },
         {
-          "keyword": "test",
-          "discount": 100
+          "keyword": "",
+          "discount": 0
         }
       ],
-      "1426960653368692764": [
+      "channel-1": [
         {
-          "keyword": "nike",
-          "discount": 50
+          "keyword": "",
+          "discount": 0
         }
       ]
     },
     "negative_keywords": [
       "yeezy",
       "barbour",
-      "uk4",
-      "air force"
+      "uk4"
     ],
     "blacklisted_channels": [
       {
         "channel_id": "1426960653368692767",
-        "nickname": "nickname"
+        "nickname": "test"
       },
       {
-        "channel_id": "1426960653368692724",
-        "nickname": "rubbish channel"
+        "channel_id": "1426960653368692763",
+        "nickname": "channel"
       }
     ]
+  },
+  "364055155169165313": {
+    "global_keywords": {
+      "dyson": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "806206221227917312": {
+    "global_keywords": {
+      "rapha": {
+        "discount": 0
+      },
+      "maap": {
+        "discount": 0
+      },
+      "le col": {
+        "discount": 0
+      },
+      "sram": {
+        "discount": 0
+      },
+      "axs": {
+        "discount": 0
+      },
+      "manuka": {
+        "discount": 50
+      },
+      "castelli": {
+        "discount": 50
+      },
+      "fizik": {
+        "discount": 50
+      },
+      "oakley": {
+        "discount": 0
+      },
+      "vomero": {
+        "discount": 50
+      },
+      "force 58": {
+        "discount": 50
+      },
+      "assos": {
+        "discount": 0
+      },
+      "kask": {
+        "discount": 50
+      },
+      "tonies": {
+        "discount": 0
+      },
+      "mulberry": {
+        "discount": 50
+      },
+      "five ten": {
+        "discount": 50
+      },
+      "fenix": {
+        "discount": 25
+      },
+      "patagonia": {
+        "discount": 50
+      },
+      "kef": {
+        "discount": 50
+      },
+      "olufsen": {
+        "discount": 50
+      },
+      "creuset": {
+        "discount": 50
+      },
+      "lecreuset": {
+        "discount": 50
+      },
+      "passenger": {
+        "discount": 50
+      },
+      "everywear": {
+        "discount": 50
+      },
+      "challenger": {
+        "discount": 25
+      },
+      "prizm": {
+        "discount": 0
+      },
+      "sutro": {
+        "discount": 0
+      },
+      "sutra": {
+        "discount": 0
+      },
+      "handball": {
+        "discount": 50
+      },
+      "hornby": {
+        "discount": 50
+      },
+      "terrex": {
+        "discount": 50
+      },
+      "hoka": {
+        "discount": 50
+      },
+      "skims": {
+        "discount": 50
+      },
+      "rains": {
+        "discount": 50
+      },
+      "trunk": {
+        "discount": 50
+      },
+      "lego": {
+        "discount": 50
+      },
+      "henry": {
+        "discount": 50
+      },
+      "fox": {
+        "discount": 50
+      },
+      "alphafly": {
+        "discount": 50
+      },
+      "vaporfly": {
+        "discount": 50
+      },
+      "vapourfly": {
+        "discount": 50
+      },
+      "pegasus": {
+        "discount": 50
+      },
+      "zegama": {
+        "discount": 50
+      },
+      "ultrafly": {
+        "discount": 50
+      },
+      "invincible": {
+        "discount": 50
+      },
+      "zoom fly": {
+        "discount": 50
+      },
+      "kiger": {
+        "discount": 50
+      },
+      "alphfly": {
+        "discount": 50
+      },
+      "69%": {
+        "discount": 69
+      },
+      "ultegra": {
+        "discount": 0
+      },
+      "duraace": {
+        "discount": 0
+      },
+      "dura": {
+        "discount": 0
+      },
+      "di2": {
+        "discount": 0
+      },
+      "yeti": {
+        "discount": 50
+      },
+      "nimbus": {
+        "discount": 50
+      },
+      "metcon": {
+        "discount": 50
+      },
+      "eastpak": {
+        "discount": 50
+      },
+      "marley": {
+        "discount": 50
+      },
+      "tacx": {
+        "discount": 25
+      },
+      "wahoo": {
+        "discount": 25
+      },
+      "suunto": {
+        "discount": 0
+      },
+      "holbrook": {
+        "discount": 0
+      },
+      "gramicci": {
+        "discount": 50
+      },
+      "dewalt": {
+        "discount": 50
+      },
+      "makita": {
+        "discount": 50
+      },
+      "high5": {
+        "discount": 50
+      },
+      "helm": {
+        "discount": 50
+      },
+      "sleuth": {
+        "discount": 50
+      },
+      "trailcross": {
+        "discount": 50
+      },
+      "freerider": {
+        "discount": 50
+      },
+      "sphaera": {
+        "discount": 50
+      },
+      "agravic": {
+        "discount": 50
+      },
+      "couleurs": {
+        "discount": 50
+      },
+      "radium": {
+        "discount": 50
+      },
+      "padel": {
+        "discount": 50
+      },
+      "smeg": {
+        "discount": 50
+      },
+      "Zipp": {
+        "discount": 75
+      },
+      "Speedcross": {
+        "discount": 50
+      },
+      "Zone3": {
+        "discount": 75
+      },
+      "Birkenstock": {
+        "discount": 50
+      },
+      "Govee": {
+        "discount": 65
+      },
+      "Rummi": {
+        "discount": 75
+      },
+      "EastPak": {
+        "discount": 75
+      },
+      "Salomon": {
+        "discount": 69
+      },
+      "Barbour": {
+        "discount": 70
+      },
+      "Trench": {
+        "discount": 65
+      },
+      "Tissot": {
+        "discount": 25
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [
+      "bikini",
+      "thong",
+      "bra",
+      "stake",
+      "tommy",
+      "manchester",
+      "barcelona",
+      "juventus",
+      "tottenham",
+      "chelsea",
+      "arsenal",
+      "football",
+      "reebok",
+      "callaway"
+    ],
+    "blacklisted_channels": []
+  },
+  "422803521210023946": {
+    "global_keywords": {
+      "new balance": {
+        "discount": 75
+      },
+      "the north face": {
+        "discount": 70
+      },
+      "optimum nutrition": {
+        "discount": 76
+      },
+      "whey protein": {
+        "discount": 80
+      },
+      "creatine": {
+        "discount": 60
+      },
+      "canada goose": {
+        "discount": 65
+      },
+      "cole buxton": {
+        "discount": 75
+      },
+      "moose knuckles": {
+        "discount": 70
+      },
+      "timberland": {
+        "discount": 80
+      },
+      "jordan": {
+        "discount": 70
+      },
+      "mfk": {
+        "discount": 50
+      },
+      "le creuset": {
+        "discount": 50
+      },
+      "13.5 tog": {
+        "discount": 60
+      },
+      "samsonite": {
+        "discount": 2
+      },
+      "skims": {
+        "discount": 0
+      },
+      "eastpak": {
+        "discount": 40
+      },
+      "wild country": {
+        "discount": 0
+      },
+      "Delonghi": {
+        "discount": 0
+      },
+      "chlóe": {
+        "discount": 0
+      },
+      "chloé": {
+        "discount": 0
+      },
+      "govee": {
+        "discount": 60
+      },
+      "moncler": {
+        "discount": 70
+      },
+      "Lego": {
+        "discount": 60
+      },
+      "versace": {
+        "discount": 50
+      },
+      "69%": {
+        "discount": 68
+      },
+      "82%": {
+        "discount": 82
+      },
+      "83%": {
+        "discount": 83
+      },
+      "84%": {
+        "discount": 84
+      },
+      "85%": {
+        "discount": 85
+      },
+      "86%": {
+        "discount": 86
+      },
+      "88%": {
+        "discount": 87
+      },
+      "89%": {
+        "discount": 88
+      },
+      "90%": {
+        "discount": 90
+      },
+      "91%": {
+        "discount": 91
+      },
+      "92%": {
+        "discount": 92
+      },
+      "93%": {
+        "discount": 93
+      },
+      "94%": {
+        "discount": 94
+      },
+      "95%": {
+        "discount": 95
+      },
+      "96%": {
+        "discount": 96
+      },
+      "97%": {
+        "discount": 97
+      },
+      "99%": {
+        "discount": 98
+      },
+      "donald": {
+        "discount": 0
+      },
+      "pixar": {
+        "discount": 60
+      },
+      "ralph lauren": {
+        "discount": 50
+      },
+      "prada": {
+        "discount": 40
+      },
+      "bricks": {
+        "discount": 0
+      },
+      "truck": {
+        "discount": 50
+      },
+      "mountain equipment": {
+        "discount": 0
+      },
+      "men's puffer": {
+        "discount": 60
+      },
+      "men's bomber jacket": {
+        "discount": 65
+      },
+      "men's parka jacket": {
+        "discount": 70
+      },
+      "hornby train set": {
+        "discount": 0
+      },
+      "100%": {
+        "discount": 70
+      },
+      "£1": {
+        "discount": 60
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "757351792806985830": {
+    "global_keywords": {
+      "90": {
+        "discount": 0
+      },
+      "north face": {
+        "discount": 50
+      },
+      "option 3. see current keywords": {
+        "discount": 0
+      },
+      "keywords": {
+        "discount": 0
+      },
+      "lego": {
+        "discount": 0
+      },
+      "90%": {
+        "discount": 0
+      },
+      "91%": {
+        "discount": 0
+      },
+      "92%": {
+        "discount": 0
+      },
+      "93%": {
+        "discount": 0
+      },
+      "94%": {
+        "discount": 0
+      },
+      "95%": {
+        "discount": 0
+      },
+      "96%": {
+        "discount": 0
+      },
+      "97%": {
+        "discount": 0
+      },
+      "98%": {
+        "discount": 0
+      },
+      "99%": {
+        "discount": 0
+      },
+      "samsung": {
+        "discount": 0
+      },
+      "samsonite": {
+        "discount": 0
+      },
+      "luggage": {
+        "discount": 0
+      },
+      "drone": {
+        "discount": 0
+      },
+      "heater": {
+        "discount": 0
+      },
+      "radiator": {
+        "discount": 0
+      },
+      "pillow": {
+        "discount": 0
+      },
+      "airbed": {
+        "discount": 0
+      },
+      "duvet": {
+        "discount": 0
+      },
+      "ralph lauren": {
+        "discount": 0
+      },
+      "carrera": {
+        "discount": 0
+      },
+      "canada goose": {
+        "discount": 0
+      },
+      "mouse": {
+        "discount": 0
+      },
+      "keyboard": {
+        "discount": 0
+      },
+      "monitor": {
+        "discount": 0
+      },
+      "perfume": {
+        "discount": 0
+      },
+      "rayban": {
+        "discount": 0
+      },
+      "playdo": {
+        "discount": 0
+      },
+      "gaming chair": {
+        "discount": 0
+      },
+      "luggage set": {
+        "discount": 0
+      },
+      "max mara": {
+        "discount": 0
+      },
+      "boss": {
+        "discount": 0
+      },
+      "hugo boss": {
+        "discount": 0
+      },
+      "calvin klein": {
+        "discount": 0
+      },
+      "tracksuit": {
+        "discount": 0
+      },
+      "perfume men": {
+        "discount": 0
+      },
+      "f1": {
+        "discount": 0
+      },
+      "redbull": {
+        "discount": 0
+      },
+      "remote control": {
+        "discount": 0
+      },
+      "fan": {
+        "discount": 0
+      },
+      "Value lights": {
+        "discount": 0
+      },
+      "Valuelights": {
+        "discount": 0
+      },
+      "Ralph Lauren": {
+        "discount": 60
+      },
+      "Rain jacket": {
+        "discount": 50
+      },
+      "Casio": {
+        "discount": 0
+      },
+      "Eastpak": {
+        "discount": 0
+      },
+      "Sliders": {
+        "discount": 60
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [
+      "bra"
+    ],
+    "blacklisted_channels": []
+  },
+  "719671854159101965": {
+    "global_keywords": {
+      "6221658": {
+        "discount": 70
+      },
+      "38088590": {
+        "discount": 80
+      },
+      "91385803": {
+        "discount": 70
+      },
+      "dyson": {
+        "discount": 60
+      },
+      "nike zoom alphafly": {
+        "discount": 50
+      },
+      "69%": {
+        "discount": 0
+      },
+      "la sportiva": {
+        "discount": 65
+      },
+      "climbing shoes": {
+        "discount": 65
+      },
+      "birkenstock": {
+        "discount": 50
+      },
+      "new balance 9060": {
+        "discount": 65
+      },
+      "merrel": {
+        "discount": 70
+      },
+      "suncream": {
+        "discount": 90
+      },
+      "hoka": {
+        "discount": 70
+      },
+      "new balance": {
+        "discount": 65
+      },
+      "camping": {
+        "discount": 68
+      },
+      "ugg": {
+        "discount": 50
+      },
+      "le creuset": {
+        "discount": 60
+      },
+      "lego": {
+        "discount": 70
+      },
+      "blender": {
+        "discount": 50
+      },
+      "gaming headset": {
+        "discount": 0
+      },
+      "earphones": {
+        "discount": 0
+      },
+      "smeg": {
+        "discount": 0
+      },
+      "handheld steamer": {
+        "discount": 0
+      },
+      "garment steamer": {
+        "discount": 0
+      },
+      "Star Wars Lego": {
+        "discount": 30
+      },
+      "Zone3 wetsuit": {
+        "discount": 70
+      },
+      "Zone 3 wetsuit": {
+        "discount": 70
+      },
+      "Zone3 Vanquish": {
+        "discount": 70
+      },
+      "garmin": {
+        "discount": 80
+      },
+      "Chanel": {
+        "discount": 50
+      },
+      "Ralph Lauren": {
+        "discount": 70
+      },
+      "Dashcam": {
+        "discount": 30
+      },
+      "Dash cam": {
+        "discount": 30
+      },
+      "food slicer": {
+        "discount": 30
+      },
+      "Belstaff": {
+        "discount": 50
+      },
+      "Zone3": {
+        "discount": 70
+      },
+      "Moncler": {
+        "discount": 70
+      },
+      "Terrex": {
+        "discount": 70
+      },
+      "Thenorthface": {
+        "discount": 70
+      },
+      "North face": {
+        "discount": 70
+      },
+      "The North face": {
+        "discount": 70
+      },
+      "Northface": {
+        "discount": 70
+      },
+      "Barbour": {
+        "discount": 70
+      },
+      "GTX": {
+        "discount": 65
+      },
+      "Goretex": {
+        "discount": 65
+      },
+      "Gore-tex": {
+        "discount": 65
+      },
+      "bauer": {
+        "discount": 70
+      },
+      "Gucci loafers": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [
+      "42009118",
+      "linea",
+      "43181915",
+      "41023313",
+      "63048018",
+      "29786006",
+      "41016299",
+      "18807403",
+      "2184883",
+      "000000000007765144",
+      "39180318",
+      "2183194",
+      "4127499",
+      "socks",
+      "sock",
+      "33171209",
+      "34976708",
+      "29967924"
+    ],
+    "blacklisted_channels": []
+  },
+  "342506256457662464": {
+    "global_keywords": {
+      "69%": {
+        "discount": 69
+      },
+      "91%": {
+        "discount": 91
+      },
+      "92%": {
+        "discount": 92
+      },
+      "93%": {
+        "discount": 93
+      },
+      "94%": {
+        "discount": 94
+      },
+      "95%": {
+        "discount": 95
+      },
+      "96%": {
+        "discount": 96
+      },
+      "97%": {
+        "discount": 97
+      },
+      "98%": {
+        "discount": 98
+      },
+      "99%": {
+        "discount": 99
+      },
+      "100%": {
+        "discount": 100
+      },
+      "Lego": {
+        "discount": 0
+      },
+      "Hue": {
+        "discount": 0
+      },
+      "DJI": {
+        "discount": 0
+      },
+      "Tent": {
+        "discount": 0
+      },
+      "Samsonite": {
+        "discount": 0
+      },
+      "Chanel": {
+        "discount": 0
+      },
+      "Zone3": {
+        "discount": 70
+      },
+      "Zone 3": {
+        "discount": 70
+      },
+      "Radley": {
+        "discount": 70
+      },
+      "test": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "985594638226321478": {
+    "global_keywords": {
+      "Samsonite": {
+        "discount": 50
+      },
+      "Maurice Lacroix": {
+        "discount": 80
+      },
+      "Zone3": {
+        "discount": 75
+      },
+      "Eastpak Tranverz": {
+        "discount": 50
+      },
+      "Gucci": {
+        "discount": 70
+      },
+      "LEGO": {
+        "discount": 75
+      },
+      "Prada": {
+        "discount": 75
+      },
+      "Prada bag": {
+        "discount": 75
+      },
+      "GOVEE": {
+        "discount": 75
+      },
+      "Govee Y Shape Light Panel (7 pack)": {
+        "discount": 75
+      },
+      "Ralph Lauren pillowcases": {
+        "discount": 75
+      },
+      "Govee Glide Hexa Pro LED Light Panels": {
+        "discount": 50
+      },
+      "Bio-Kult Mind Advanced Multi-Action Formulation": {
+        "discount": 70
+      },
+      "Moncler": {
+        "discount": 70
+      },
+      "Jimmy Choo bag": {
+        "discount": 75
+      },
+      "Barbour coat": {
+        "discount": 70
+      },
+      "Barbour jacket": {
+        "discount": 70
+      },
+      "Moncler jacket": {
+        "discount": 70
+      },
+      "Moncler coat": {
+        "discount": 70
+      },
+      "Stone island coat": {
+        "discount": 70
+      },
+      "Stone island jacket": {
+        "discount": 70
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [
+      "thong",
+      "bra",
+      "threadbare",
+      "skins"
+    ],
+    "blacklisted_channels": []
+  },
+  "1283720471489019916": {
+    "global_keywords": {},
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "524439042402549788": {
+    "global_keywords": {
+      "Nike": {
+        "discount": 50
+      },
+      "Adidas": {
+        "discount": 50
+      },
+      "Calvin Klein": {
+        "discount": 50
+      },
+      "Lego": {
+        "discount": 50
+      },
+      "Barbie": {
+        "discount": 50
+      },
+      "Drone": {
+        "discount": 50
+      },
+      "Tommy Hilfiger": {
+        "discount": 50
+      },
+      "CONVERSE": {
+        "discount": 50
+      },
+      "Lacoste": {
+        "discount": 50
+      },
+      "reebok": {
+        "discount": 50
+      },
+      "New Balance": {
+        "discount": 50
+      },
+      "hasbro": {
+        "discount": 50
+      },
+      "Yeezy": {
+        "discount": 50
+      },
+      "Playstation": {
+        "discount": 50
+      },
+      "Moncler": {
+        "discount": 50
+      },
+      "Apple": {
+        "discount": 50
+      },
+      "Vans": {
+        "discount": 50
+      },
+      "Nintendo": {
+        "discount": 50
+      },
+      "Gucci": {
+        "discount": 50
+      },
+      "Amarni": {
+        "discount": 50
+      },
+      "Off White": {
+        "discount": 50
+      },
+      "c.p. company": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "969682213799084033": {
+    "global_keywords": {
+      "1601044126": {
+        "discount": 0
+      },
+      "lego": {
+        "discount": 0
+      },
+      "90%": {
+        "discount": 0
+      },
+      "80%": {
+        "discount": 0
+      },
+      "79%": {
+        "discount": 0
+      },
+      "calvin klein dickies": {
+        "discount": 0
+      },
+      "dyson": {
+        "discount": 0
+      },
+      "fred perry": {
+        "discount": 0
+      },
+      "red wing": {
+        "discount": 0
+      },
+      "playstation 5 samsonite suitcase fisher price fisher-price": {
+        "discount": 0
+      },
+      "playstation 5": {
+        "discount": 0
+      },
+      "Samsonite suitcase": {
+        "discount": 0
+      },
+      "fisher price": {
+        "discount": 0
+      },
+      "fisher-price": {
+        "discount": 0
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "645645812411662337": {
+    "global_keywords": {
+      "Asics": {
+        "discount": 0
+      },
+      "Nike Air Max": {
+        "discount": 0
+      },
+      "Nike Tuned Air": {
+        "discount": 0
+      },
+      "New Balance": {
+        "discount": 0
+      },
+      "Lego": {
+        "discount": 0
+      },
+      "Dyson": {
+        "discount": 0
+      },
+      "Smeg": {
+        "discount": 0
+      },
+      "Karcher": {
+        "discount": 0
+      },
+      "Nike P6000": {
+        "discount": 0
+      },
+      "Samsonite": {
+        "discount": 50
+      },
+      "cole buxton": {
+        "discount": 70
+      },
+      "RING Battery Video Doorbell (3rd Gen) - Satin Nickel": {
+        "discount": 0
+      },
+      "Moncler": {
+        "discount": 70
+      },
+      "Eastpak": {
+        "discount": 50
+      },
+      "Ugg Tazz": {
+        "discount": 0
+      },
+      "Ugg boot": {
+        "discount": 0
+      },
+      "Jellycat": {
+        "discount": 0
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "1294402157659029516": {
+    "global_keywords": {},
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "1296475232479084668": {
+    "global_keywords": {
+      "69%": {
+        "discount": 0
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "704756064330973235": {
+    "global_keywords": {
+      "drakes": {
+        "discount": 0
+      },
+      "drake's": {
+        "discount": 0
+      },
+      "yeti": {
+        "discount": 0
+      },
+      "Universal works": {
+        "discount": 0
+      },
+      "Snow peak": {
+        "discount": 0
+      },
+      "Barbour": {
+        "discount": 0
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "409068480957251604": {
+    "global_keywords": {
+      "Le creuset": {
+        "discount": 50
+      },
+      "Lego Star Wars": {
+        "discount": 60
+      },
+      "Dyson": {
+        "discount": 60
+      },
+      "Smeg": {
+        "discount": 60
+      },
+      "Lego": {
+        "discount": 65
+      },
+      "Oakley sunglasses": {
+        "discount": 70
+      },
+      "Rayban": {
+        "discount": 70
+      },
+      "Birkenstock": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "272397661754097665": {
+    "global_keywords": {
+      "cole buxton": {
+        "discount": 70
+      },
+      "3898196 | 3ME10101430": {
+        "discount": 70
+      },
+      "eastpak": {
+        "discount": 70
+      },
+      "samsonite": {
+        "discount": 70
+      },
+      "dyson": {
+        "discount": 70
+      },
+      "samsung": {
+        "discount": 70
+      },
+      "radley anniversary": {
+        "discount": 0
+      },
+      "eastpak tranverz": {
+        "discount": 0
+      },
+      "govee": {
+        "discount": 70
+      },
+      "Holland & Barrett": {
+        "discount": 70
+      },
+      "barbour": {
+        "discount": 70
+      },
+      "dragon ball super": {
+        "discount": 70
+      }
+    },
+    "channel_keywords": {
+      "1323980851368689734": [
+        {
+          "keyword": "the north face\nnorth face",
+          "discount": 70
+        }
+      ]
+    },
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "511888841737633792": {
+    "global_keywords": {
+      "patagonia": {
+        "discount": 60
+      },
+      "norse projects": {
+        "discount": 50
+      },
+      "Philips hue": {
+        "discount": 50
+      },
+      "Apple": {
+        "discount": 50
+      },
+      "Dji": {
+        "discount": 50
+      },
+      "Canon": {
+        "discount": 70
+      },
+      "Nike sb": {
+        "discount": 60
+      },
+      "Nike tech fleece": {
+        "discount": 60
+      },
+      "Stone island": {
+        "discount": 50
+      },
+      "Oakley": {
+        "discount": 50
+      },
+      "calvin klein underwear": {
+        "discount": 70
+      },
+      "Rains": {
+        "discount": 70
+      },
+      "Nukeproof": {
+        "discount": 50
+      },
+      "Fjällräven": {
+        "discount": 50
+      },
+      "fjallraven": {
+        "discount": 50
+      },
+      "nukeproof": {
+        "discount": 70
+      },
+      "specialized": {
+        "discount": 70
+      },
+      "eastpak": {
+        "discount": 50
+      },
+      "samsonite": {
+        "discount": 70
+      },
+      "saint laurent": {
+        "discount": 70
+      },
+      "gelert tent": {
+        "discount": 70
+      },
+      "oakley": {
+        "discount": 60
+      },
+      "nike sb": {
+        "discount": 80
+      },
+      "running trainers": {
+        "discount": 60
+      },
+      "Ralph Lauren home": {
+        "discount": 70
+      },
+      "sandqvist": {
+        "discount": 75
+      },
+      "phillips": {
+        "discount": 60
+      },
+      "dji": {
+        "discount": 20
+      },
+      "garmin": {
+        "discount": 60
+      },
+      "Gelert Tent": {
+        "discount": 70
+      },
+      "ralph lauren": {
+        "discount": 70
+      },
+      "govee": {
+        "discount": 70
+      },
+      "philips hue": {
+        "discount": 70
+      },
+      "nike uk10": {
+        "discount": 70
+      },
+      "ralph lauren polo": {
+        "discount": 80
+      },
+      "Adidas handball uk5": {
+        "discount": 50
+      },
+      "jellycat": {
+        "discount": 50
+      },
+      "London Gatwick (LGW | EZY8219)": {
+        "discount": 60
+      },
+      "dyson": {
+        "discount": 30
+      },
+      "Washing machine": {
+        "discount": 40
+      },
+      "undersink unit": {
+        "discount": 40
+      },
+      "under sink": {
+        "discount": 40
+      },
+      "bathroom storage": {
+        "discount": 40
+      },
+      "Test": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {
+      "1332129308033945691": [
+        {
+          "keyword": "*",
+          "discount": 92
+        }
+      ]
+    },
+    "negative_keywords": [
+      "polo ralph lauren polo essential bra",
+      "polo ralph lauren polo eyelet balcony bra",
+      "polo ralph lauren polo mesh triangle bra",
+      "polo ralph lauren polo mesh brief",
+      "polo ralph lauren polo essential brief",
+      "polo ralph lauren polo lace mid brief",
+      "polo ralph lauren polo lace bustier",
+      "polo ralph lauren polo mesh demi bra",
+      "polo ralph lauren polo essential plunge bra",
+      "polo ralph lauren bottoms",
+      "polo ralph lauren argyle sweater vest"
+    ],
+    "blacklisted_channels": [
+      {
+        "channel_id": "3243421423423423423",
+        "nickname": "tester"
+      }
+    ]
+  },
+  "1055329646079647754": {
+    "global_keywords": {
+      "moncler": {
+        "discount": 50
+      },
+      "lego": {
+        "discount": 50
+      },
+      "stone island": {
+        "discount": 50
+      },
+      "cp company": {
+        "discount": 50
+      },
+      "moose knuckles": {
+        "discount": 50
+      },
+      "burberry": {
+        "discount": 50
+      },
+      "balenciaga": {
+        "discount": 50
+      },
+      "gucci": {
+        "discount": 50
+      },
+      "louis vutton": {
+        "discount": 50
+      },
+      "ninja": {
+        "discount": 50
+      },
+      "dyson": {
+        "discount": 50
+      },
+      "canada goose": {
+        "discount": 50
+      },
+      "dior": {
+        "discount": 50
+      },
+      "prada": {
+        "discount": 50
+      },
+      "north face": {
+        "discount": 50
+      },
+      "arcteryx": {
+        "discount": 50
+      },
+      "morphy richards": {
+        "discount": 50
+      },
+      "shark": {
+        "discount": 50
+      },
+      "smeg": {
+        "discount": 50
+      },
+      "oakley": {
+        "discount": 50
+      },
+      "cartier": {
+        "discount": 50
+      },
+      "chloé": {
+        "discount": 50
+      },
+      "fear of god essentials": {
+        "discount": 50
+      },
+      "tory burch": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "660969503865176097": {
+    "global_keywords": {
+      "lego": {
+        "discount": 50
+      },
+      "c.p. company": {
+        "discount": 40
+      },
+      "nike": {
+        "discount": 70
+      },
+      "stone island": {
+        "discount": 40
+      },
+      "cp company": {
+        "discount": 40
+      },
+      "88%": {
+        "discount": 0
+      },
+      "90%": {
+        "discount": 0
+      },
+      "91%": {
+        "discount": 0
+      },
+      "92%": {
+        "discount": 0
+      },
+      "93%": {
+        "discount": 0
+      },
+      "89%": {
+        "discount": 0
+      },
+      "87%": {
+        "discount": 0
+      },
+      "86%": {
+        "discount": 0
+      },
+      "85%": {
+        "discount": 0
+      },
+      "calvin klein": {
+        "discount": 0
+      },
+      "dyson": {
+        "discount": 0
+      },
+      "84%": {
+        "discount": 0
+      },
+      "83%": {
+        "discount": 0
+      },
+      "82%": {
+        "discount": 0
+      },
+      "81%": {
+        "discount": 0
+      },
+      "80%": {
+        "discount": 0
+      },
+      "the north face": {
+        "discount": 70
+      },
+      "tnf": {
+        "discount": 70
+      },
+      "moncler": {
+        "discount": 60
+      },
+      "oakley": {
+        "discount": 70
+      },
+      "bang and olufsen": {
+        "discount": 70
+      },
+      "bang olufsen": {
+        "discount": 60
+      },
+      "arc'teryx": {
+        "discount": 70
+      },
+      "arcteryx": {
+        "discount": 70
+      },
+      "94%": {
+        "discount": 0
+      },
+      "95%": {
+        "discount": 0
+      },
+      "96%": {
+        "discount": 0
+      },
+      "97%": {
+        "discount": 0
+      },
+      "98%": {
+        "discount": 0
+      },
+      "99%": {
+        "discount": 0
+      },
+      "79%": {
+        "discount": 0
+      },
+      "78%": {
+        "discount": 0
+      },
+      "77%": {
+        "discount": 0
+      },
+      "76%": {
+        "discount": 0
+      },
+      "75%": {
+        "discount": 0
+      },
+      "dji": {
+        "discount": 60
+      },
+      "iphone": {
+        "discount": 60
+      },
+      "levis": {
+        "discount": 70
+      },
+      "levi’s": {
+        "discount": 70
+      },
+      "levi": {
+        "discount": 70
+      },
+      "tent": {
+        "discount": 7
+      },
+      "wild country": {
+        "discount": 60
+      },
+      "terra nova": {
+        "discount": 60
+      },
+      "msr": {
+        "discount": 60
+      },
+      "camping": {
+        "discount": 60
+      },
+      "2 man": {
+        "discount": 60
+      },
+      "wild": {
+        "discount": 60
+      },
+      "terra": {
+        "discount": 60
+      },
+      "eastpak": {
+        "discount": 60
+      },
+      "suitcase": {
+        "discount": 70
+      },
+      "luggage": {
+        "discount": 70
+      },
+      "case": {
+        "discount": 70
+      },
+      "trolly": {
+        "discount": 70
+      },
+      "samsonite": {
+        "discount": 70
+      },
+      "74%": {
+        "discount": 0
+      },
+      "73%": {
+        "discount": 0
+      },
+      "72%": {
+        "discount": 0
+      },
+      "71%": {
+        "discount": 0
+      },
+      "70%": {
+        "discount": 0
+      },
+      "cole buxton": {
+        "discount": 70
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [
+      "french connection"
+    ],
+    "blacklisted_channels": [
+      "1361298038529720501"
+    ]
+  },
+  "509257985009123333": {
+    "global_keywords": {
+      "CP Company": {
+        "discount": 50
+      },
+      "Stone Island": {
+        "discount": 50
+      },
+      "Kettle": {
+        "discount": 35
+      },
+      "Toaster": {
+        "discount": 35
+      },
+      "ProCook": {
+        "discount": 30
+      },
+      "coach": {
+        "discount": 35
+      },
+      "Christmas tree": {
+        "discount": 20
+      },
+      "Cole Buxton": {
+        "discount": 40
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "471606825691774987": {
+    "global_keywords": {
+      "Beta AR": {
+        "discount": 30
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "818191049821782018": {
+    "global_keywords": {
+      "60438208": {
+        "discount": 80
+      },
+      "dyson": {
+        "discount": 50
+      },
+      "lacroix": {
+        "discount": 50
+      },
+      "rapha": {
+        "discount": 50
+      },
+      "oakley": {
+        "discount": 70
+      },
+      "cycling": {
+        "discount": 70
+      },
+      "shokz": {
+        "discount": 50
+      },
+      "birkinstock": {
+        "discount": 70
+      },
+      "ralph lauren": {
+        "discount": 70
+      },
+      "lego": {
+        "discount": 70
+      },
+      "watch": {
+        "discount": 70
+      },
+      "soho": {
+        "discount": 70
+      },
+      "ferrari": {
+        "discount": 70
+      },
+      "perfume": {
+        "discount": 70
+      },
+      "aftershave": {
+        "discount": 70
+      },
+      "versace": {
+        "discount": 70
+      },
+      "on cloud": {
+        "discount": 70
+      },
+      "veja": {
+        "discount": 70
+      },
+      "suuto": {
+        "discount": 70
+      },
+      "garmin": {
+        "discount": 70
+      },
+      "wahoo": {
+        "discount": 70
+      },
+      "polar": {
+        "discount": 70
+      },
+      "sony": {
+        "discount": 70
+      },
+      "gymshark": {
+        "discount": 70
+      },
+      "ray ban": {
+        "discount": 70
+      },
+      "science in sport": {
+        "discount": 50
+      },
+      "run": {
+        "discount": 80
+      },
+      "barbour": {
+        "discount": 70
+      },
+      "sunglasses": {
+        "discount": 80
+      },
+      "Backpack": {
+        "discount": 70
+      },
+      "Rapha": {
+        "discount": 50
+      },
+      "UGG": {
+        "discount": 70
+      },
+      "Slider": {
+        "discount": 70
+      },
+      "Flip flop": {
+        "discount": 70
+      },
+      "Nike": {
+        "discount": 70
+      },
+      "New Balance": {
+        "discount": 70
+      },
+      "crocs": {
+        "discount": 60
+      },
+      "Goove": {
+        "discount": 70
+      },
+      "Govee": {
+        "discount": 70
+      },
+      "Dhb": {
+        "discount": 50
+      },
+      "boss": {
+        "discount": 70
+      },
+      "North face": {
+        "discount": 70
+      }
+    },
+    "channel_keywords": {
+      "1401658497518800917": [
+        {
+          "keyword": "jersey",
+          "discount": 70
+        }
+      ]
+    },
+    "negative_keywords": [
+      "bra",
+      "police",
+      "french"
+    ],
+    "blacklisted_channels": []
+  },
+  "610532921241108509": {
+    "global_keywords": {
+      "Cole Buxton": {
+        "discount": 50
+      },
+      "Lego": {
+        "discount": 40
+      },
+      "mavic ksyrium": {
+        "discount": 50
+      },
+      "Electric scooter": {
+        "discount": 70
+      },
+      "Govee": {
+        "discount": 70
+      },
+      "Eastpak Suitcase": {
+        "discount": 70
+      },
+      "Eastpak Luggage": {
+        "discount": 70
+      },
+      "Eastpak bag": {
+        "discount": 70
+      },
+      "The North Face Bag": {
+        "discount": 60
+      },
+      "Montblanc card holder": {
+        "discount": 70
+      },
+      "Seiko strap watch": {
+        "discount": 70
+      },
+      "Barbour Jacket": {
+        "discount": 70
+      },
+      "Ralph Lauren Crossbody bag": {
+        "discount": 70
+      },
+      "Dior Sunglasses": {
+        "discount": 70
+      },
+      "E-scooter": {
+        "discount": 70
+      },
+      "Electric Scooter": {
+        "discount": 70
+      },
+      "Salomon": {
+        "discount": 70
+      },
+      "Maurice Lacroix": {
+        "discount": 70
+      },
+      "Zone3 Wet Suit": {
+        "discount": 70
+      },
+      "Garmin B Demo": {
+        "discount": 70
+      },
+      "Theragun": {
+        "discount": 70
+      },
+      "Canada Goose": {
+        "discount": 70
+      },
+      "Canada Goose Cap": {
+        "discount": 70
+      },
+      "Gucci": {
+        "discount": 70
+      },
+      "Eastpak": {
+        "discount": 70
+      },
+      "Stone Island": {
+        "discount": 70
+      },
+      "Jimmy Choo bag": {
+        "discount": 70
+      },
+      "Gucci Loafer": {
+        "discount": 70
+      },
+      "John Lewis Lamp": {
+        "discount": 70
+      },
+      "Speaker": {
+        "discount": 70
+      },
+      "Soundbar": {
+        "discount": 70
+      },
+      "Arcteryx": {
+        "discount": 70
+      },
+      "Barbour coat": {
+        "discount": 70
+      },
+      "Moncler": {
+        "discount": 70
+      },
+      "Bike": {
+        "discount": 80
+      },
+      "Jellycat": {
+        "discount": 70
+      },
+      "Zone3": {
+        "discount": 70
+      },
+      "Barbour": {
+        "discount": 70
+      },
+      "Gallery dept": {
+        "discount": 70
+      },
+      "Daily paper epuffa jacket": {
+        "discount": 70
+      },
+      "Daily paper puffer": {
+        "discount": 70
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "808279350997680149": {
+    "global_keywords": {},
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "373857349825200138": {
+    "global_keywords": {
+      "530": {
+        "discount": 30
+      },
+      "740": {
+        "discount": 30
+      },
+      "1130": {
+        "discount": 30
+      },
+      "1906": {
+        "discount": 30
+      },
+      "2002": {
+        "discount": 30
+      },
+      "dyson": {
+        "discount": 50
+      },
+      "smeg": {
+        "discount": 50
+      },
+      "apple watch": {
+        "discount": 50
+      },
+      "laptop": {
+        "discount": 50
+      },
+      "sauvage": {
+        "discount": 50
+      },
+      "foam runner": {
+        "discount": 50
+      },
+      "yeezy slide": {
+        "discount": 0
+      },
+      "handball": {
+        "discount": 30
+      },
+      "spezial": {
+        "discount": 30
+      },
+      "samba": {
+        "discount": 30
+      },
+      "air max": {
+        "discount": 30
+      },
+      "mercurial": {
+        "discount": 50
+      },
+      "g-shock": {
+        "discount": 50
+      },
+      "represent": {
+        "discount": 50
+      },
+      "north face": {
+        "discount": 50
+      },
+      "salomon": {
+        "discount": 50
+      },
+      "gazelle": {
+        "discount": 30
+      },
+      "kayano": {
+        "discount": 30
+      },
+      "samsung": {
+        "discount": 50
+      },
+      "suitcase": {
+        "discount": 50
+      },
+      "90%": {
+        "discount": 0
+      },
+      "91%": {
+        "discount": 0
+      },
+      "eastpak": {
+        "discount": 50
+      },
+      "jellycat": {
+        "discount": 40
+      },
+      "Terrex": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "151044311171989506": {
+    "global_keywords": {
+      "kärcher": {
+        "discount": 50
+      },
+      "oakley": {
+        "discount": 50
+      },
+      "suitcase": {
+        "discount": 70
+      },
+      "lego": {
+        "discount": 75
+      },
+      "ski": {
+        "discount": 50
+      },
+      "snow": {
+        "discount": 50
+      },
+      "dyson": {
+        "discount": 50
+      },
+      "arc'teryx": {
+        "discount": 50
+      },
+      "fusalp": {
+        "discount": 50
+      },
+      "terrex": {
+        "discount": 50
+      },
+      "moncler": {
+        "discount": 50
+      },
+      "grenoble": {
+        "discount": 50
+      },
+      "goldbergh": {
+        "discount": 50
+      },
+      "atomic": {
+        "discount": 50
+      },
+      "K2": {
+        "discount": 50
+      },
+      "black crows": {
+        "discount": 50
+      },
+      "rossignol": {
+        "discount": 50
+      },
+      "salomon": {
+        "discount": 50
+      },
+      "camping": {
+        "discount": 70
+      },
+      "garmin": {
+        "discount": 50
+      },
+      "coros": {
+        "discount": 50
+      },
+      "skycaddie": {
+        "discount": 70
+      },
+      "rolex": {
+        "discount": 30
+      },
+      "eastpak": {
+        "discount": 60
+      },
+      "Dewalt": {
+        "discount": 70
+      },
+      "Makita": {
+        "discount": 70
+      },
+      "Bosch": {
+        "discount": 70
+      },
+      "burberry": {
+        "discount": 70
+      },
+      "karcher": {
+        "discount": 70
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [
+      "skins",
+      "skirt",
+      "skinny",
+      "swarovski"
+    ],
+    "blacklisted_channels": []
+  },
+  "796865493914222613": {
+    "global_keywords": {
+      "Kärcher": {
+        "discount": 0
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "1154095616255852717": {
+    "global_keywords": {
+      "ASICS": {
+        "discount": 20
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "286927640475074561": {
+    "global_keywords": {
+      "Stone island": {
+        "discount": 60
+      },
+      "Moncler": {
+        "discount": 60
+      },
+      "Dior": {
+        "discount": 50
+      },
+      "Kayano 14": {
+        "discount": 50
+      },
+      "Lego": {
+        "discount": 50
+      },
+      "Lawnmower": {
+        "discount": 70
+      },
+      "Pressure washer": {
+        "discount": 70
+      },
+      "Dyson": {
+        "discount": 70
+      },
+      "Smeg": {
+        "discount": 70
+      },
+      "Burberry": {
+        "discount": 60
+      },
+      "Tent": {
+        "discount": 70
+      },
+      "Philips": {
+        "discount": 75
+      },
+      "Suitcase": {
+        "discount": 70
+      },
+      "Samsonite": {
+        "discount": 70
+      },
+      "Moose knuckles": {
+        "discount": 70
+      },
+      "Scooter": {
+        "discount": 50
+      },
+      "Ugg": {
+        "discount": 50
+      },
+      "Prada": {
+        "discount": 0
+      },
+      "YSL": {
+        "discount": 50
+      },
+      "Eastpak": {
+        "discount": 60
+      },
+      "Barbour": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {
+      "1407418269157032189": [
+        {
+          "keyword": "Monitor",
+          "discount": 40
+        }
+      ],
+      "1323968026986549370": [
+        {
+          "keyword": "1906L\n1906A",
+          "discount": 40
+        }
+      ]
+    },
+    "negative_keywords": [
+      "snuggle"
+    ],
+    "blacklisted_channels": []
+  },
+  "566958195554254848": {
+    "global_keywords": {
+      "cole buxton": {
+        "discount": 60
+      },
+      "dyson": {
+        "discount": 50
+      },
+      "tent": {
+        "discount": 40
+      },
+      "gallery dept": {
+        "discount": 40
+      },
+      "gucci": {
+        "discount": 40
+      },
+      "stone island": {
+        "discount": 40
+      },
+      "eastpak": {
+        "discount": 40
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "787265750418980866": {
+    "global_keywords": {
+      "Soundbar": {
+        "discount": 30
+      },
+      "Tag Heuer": {
+        "discount": 10
+      },
+      "Breitling": {
+        "discount": 10
+      },
+      "Oakley": {
+        "discount": 20
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "906189272661524491": {
+    "global_keywords": {
+      "100": {
+        "discount": 60
+      },
+      "4114568": {
+        "discount": 0
+      },
+      "lego": {
+        "discount": 60
+      },
+      "ralph lauren": {
+        "discount": 50
+      },
+      "balenciaga": {
+        "discount": 60
+      },
+      "gucci": {
+        "discount": 50
+      },
+      "100%": {
+        "discount": 100
+      },
+      "dior": {
+        "discount": 50
+      },
+      "stone island": {
+        "discount": 60
+      },
+      "prada": {
+        "discount": 50
+      },
+      "ysl": {
+        "discount": 50
+      },
+      "saint laurent": {
+        "discount": 50
+      },
+      "ugg": {
+        "discount": 50
+      },
+      "moncler": {
+        "discount": 50
+      },
+      "canada goose": {
+        "discount": 50
+      },
+      "skims": {
+        "discount": 50
+      },
+      "christian louboutin": {
+        "discount": 50
+      },
+      "train set": {
+        "discount": 50
+      },
+      "69%": {
+        "discount": 69
+      },
+      "c.p. company": {
+        "discount": 65
+      },
+      "ninja": {
+        "discount": 50
+      },
+      "burberry": {
+        "discount": 50
+      },
+      "jacquemus": {
+        "discount": 50
+      },
+      "samsonite": {
+        "discount": 60
+      },
+      "squash": {
+        "discount": 80
+      },
+      "alphafly": {
+        "discount": 50
+      },
+      "samba": {
+        "discount": 50
+      },
+      "spezial": {
+        "discount": 50
+      },
+      "sambae": {
+        "discount": 50
+      },
+      "alphfly": {
+        "discount": 50
+      },
+      "p-6000": {
+        "discount": 50
+      },
+      "p6000": {
+        "discount": 50
+      },
+      "vaporfly": {
+        "discount": 50
+      },
+      "vapormax": {
+        "discount": 50
+      },
+      "pegasus": {
+        "discount": 50
+      },
+      "adizero": {
+        "discount": 50
+      },
+      "dji": {
+        "discount": 40
+      },
+      "hue": {
+        "discount": 40
+      },
+      "fujifilm": {
+        "discount": 40
+      },
+      "canon": {
+        "discount": 0
+      },
+      "shimano": {
+        "discount": 0
+      },
+      "wild helm": {
+        "discount": 0
+      },
+      "wild country": {
+        "discount": 0
+      },
+      "Dyson": {
+        "discount": 0
+      },
+      "Smeg": {
+        "discount": 0
+      },
+      "Apple": {
+        "discount": 50
+      },
+      "Goove": {
+        "discount": 50
+      },
+      "Govee": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "1084205576088727603": {
+    "global_keywords": {
+      "taylor made": {
+        "discount": 50
+      },
+      "ping": {
+        "discount": 50
+      },
+      "titleist": {
+        "discount": 30
+      },
+      "nike": {
+        "discount": 50
+      },
+      "adidas": {
+        "discount": 50
+      },
+      "king cobra": {
+        "discount": 30
+      },
+      "ralph lauren": {
+        "discount": 50
+      },
+      "fred perry": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "549687366156025866": {
+    "global_keywords": {
+      "sonos": {
+        "discount": 25
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "209811887393734656": {
+    "global_keywords": {
+      "Padel": {
+        "discount": 40
+      },
+      "Bullpadel": {
+        "discount": 40
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "435213065345302530": {
+    "global_keywords": {
+      "eastpark": {
+        "discount": 0
+      },
+      "Eastpak": {
+        "discount": 30
+      },
+      "toaster": {
+        "discount": 20
+      },
+      "Kettle": {
+        "discount": 30
+      },
+      "Toaster": {
+        "discount": 30
+      },
+      "starlink": {
+        "discount": 0
+      },
+      "samsonite": {
+        "discount": 0
+      },
+      "Barbour": {
+        "discount": 30
+      },
+      "govee glide": {
+        "discount": 0
+      },
+      "puffer jacket": {
+        "discount": 40
+      },
+      "Casio Watch": {
+        "discount": 40
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "718176681688301708": {
+    "global_keywords": {
+      "Zone3": {
+        "discount": 50
+      },
+      "Eastpak": {
+        "discount": 75
+      },
+      "Maurice": {
+        "discount": 50
+      },
+      "le creuset": {
+        "discount": 0
+      },
+      "Govee": {
+        "discount": 60
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "1148028908793511937": {
+    "global_keywords": {
+      "Dyson": {
+        "discount": 30
+      },
+      "Shark": {
+        "discount": 30
+      },
+      "Funko": {
+        "discount": 30
+      },
+      "Dior": {
+        "discount": 50
+      },
+      "Gucci": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "321708439544004619": {
+    "global_keywords": {},
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "216500021946744833": {
+    "global_keywords": {
+      "Palm Angels": {
+        "discount": 0
+      },
+      "Play doh": {
+        "discount": 0
+      },
+      "Argos": {
+        "discount": 0
+      },
+      "Toys": {
+        "discount": 0
+      },
+      "Lego": {
+        "discount": 0
+      },
+      "Kids": {
+        "discount": 0
+      },
+      "Action": {
+        "discount": 0
+      },
+      "Swarovski": {
+        "discount": 0
+      },
+      "Disney": {
+        "discount": 0
+      },
+      "Mickey Mouse": {
+        "discount": 0
+      },
+      "Cars": {
+        "discount": 0
+      },
+      "Donald": {
+        "discount": 0
+      },
+      "Pixar": {
+        "discount": 0
+      },
+      "Game": {
+        "discount": 0
+      },
+      "Ralph Lauren": {
+        "discount": 0
+      },
+      "Prada": {
+        "discount": 0
+      },
+      "Boy": {
+        "discount": 0
+      },
+      "Bricks": {
+        "discount": 0
+      },
+      "Truck": {
+        "discount": 0
+      },
+      "Train": {
+        "discount": 0
+      },
+      "North face": {
+        "discount": 0
+      },
+      "Rab": {
+        "discount": 0
+      },
+      "Msr": {
+        "discount": 0
+      },
+      "Montane": {
+        "discount": 0
+      },
+      "Salomon": {
+        "discount": 0
+      },
+      "Merrell": {
+        "discount": 0
+      },
+      "Mountain equipment": {
+        "discount": 0
+      },
+      "Men’s puffer": {
+        "discount": 0
+      },
+      "Men’s bomber jacket": {
+        "discount": 0
+      },
+      "Men’s parka jacket": {
+        "discount": 0
+      },
+      "Hornby": {
+        "discount": 0
+      },
+      "Train set": {
+        "discount": 0
+      },
+      "PlayStation 5 disc": {
+        "discount": 0
+      },
+      "Disc edition": {
+        "discount": 0
+      },
+      "Dr martens": {
+        "discount": 0
+      },
+      "It luggage": {
+        "discount": 0
+      },
+      "Barbie": {
+        "discount": 0
+      },
+      "Signature oval cast-iron casserole dish": {
+        "discount": 0
+      },
+      "Wheel trolley suitcase": {
+        "discount": 0
+      },
+      "Luggage": {
+        "discount": 0
+      },
+      "Heavy duty": {
+        "discount": 0
+      },
+      "Makita": {
+        "discount": 0
+      },
+      "Drill": {
+        "discount": 0
+      },
+      "Samsonite": {
+        "discount": 0
+      },
+      "Antler": {
+        "discount": 0
+      },
+      "American tourister": {
+        "discount": 0
+      },
+      "Stone island": {
+        "discount": 0
+      },
+      "Canada goose": {
+        "discount": 0
+      },
+      "Maison Francis kurkdjian": {
+        "discount": 0
+      },
+      "Oud satin mood": {
+        "discount": 0
+      },
+      "Baccarat rouge": {
+        "discount": 0
+      },
+      "Cp company": {
+        "discount": 0
+      },
+      "Moncler": {
+        "discount": 0
+      },
+      "Millets": {
+        "discount": 0
+      },
+      "Star Wars": {
+        "discount": 0
+      },
+      "Lego blocks": {
+        "discount": 0
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "1403691035229425796": {
+    "global_keywords": {},
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "608652322033238030": {
+    "global_keywords": {
+      "Birkenstock": {
+        "discount": 60
+      },
+      "Dyson": {
+        "discount": 60
+      },
+      "Represent": {
+        "discount": 60
+      },
+      "Skims": {
+        "discount": 70
+      },
+      "Salomon": {
+        "discount": 60
+      },
+      "Dior": {
+        "discount": 70
+      },
+      "Gucci": {
+        "discount": 70
+      },
+      "Coach": {
+        "discount": 70
+      },
+      "Chloe": {
+        "discount": 70
+      },
+      "Barbour": {
+        "discount": 70
+      },
+      "Jellycat": {
+        "discount": 60
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "309948114922373120": {
+    "global_keywords": {
+      "Eastpak": {
+        "discount": 50
+      },
+      "Dyson": {
+        "discount": 50
+      },
+      "Birkenstock": {
+        "discount": 0
+      },
+      "Govee": {
+        "discount": 0
+      }
+    },
+    "channel_keywords": {
+      "1323967435031711795": [
+        {
+          "keyword": "Eastpak",
+          "discount": 50
+        }
+      ]
+    },
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "794376946535366667": {
+    "global_keywords": {
+      "Smeg": {
+        "discount": 80
+      },
+      "Dyson": {
+        "discount": 80
+      },
+      "Dyson hairdryer": {
+        "discount": 80
+      },
+      "Dyson curler": {
+        "discount": 80
+      },
+      "Dyson vacuum": {
+        "discount": 80
+      },
+      "Adidas Stella": {
+        "discount": 90
+      },
+      "Govee": {
+        "discount": 70
+      },
+      "Starlink": {
+        "discount": 60
+      },
+      "Starlinks": {
+        "discount": 60
+      },
+      "Stone island membrana": {
+        "discount": 0
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "738056797851484160": {
+    "global_keywords": {},
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "623666685479485461": {
+    "global_keywords": {
+      "dyson": {
+        "discount": 0
+      },
+      "ddd": {
+        "discount": 0
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "935245736260534302": {
+    "global_keywords": {
+      "Belstaff": {
+        "discount": 50
+      },
+      "Govee": {
+        "discount": 50
+      },
+      "Tranverz": {
+        "discount": 50
+      },
+      "Wetsuit": {
+        "discount": 50
+      },
+      "Karcher": {
+        "discount": 50
+      },
+      "Eastpak": {
+        "discount": 50
+      },
+      "Dyson": {
+        "discount": 50
+      },
+      "Golf": {
+        "discount": 50
+      },
+      "Hydration": {
+        "discount": 50
+      },
+      "Muddyfox": {
+        "discount": 50
+      },
+      "Cole Buxton": {
+        "discount": 50
+      },
+      "Zone3": {
+        "discount": 50
+      },
+      "Taylormade": {
+        "discount": 50
+      },
+      "Knitted": {
+        "discount": 50
+      },
+      "Clubs": {
+        "discount": 50
+      },
+      "Percival": {
+        "discount": 50
+      },
+      "Jellycat": {
+        "discount": 50
+      },
+      "Barbour": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "1226618601818161214": {
+    "global_keywords": {
+      "Stone island": {
+        "discount": 70
+      },
+      "Canada goose": {
+        "discount": 70
+      },
+      "Moncler": {
+        "discount": 70
+      },
+      "Rolex": {
+        "discount": 70
+      },
+      "Cp company": {
+        "discount": 70
+      },
+      "Dyson": {
+        "discount": 70
+      },
+      "Garmin": {
+        "discount": 70
+      },
+      "Oakley sunglasses": {
+        "discount": 70
+      },
+      "Skycaddie": {
+        "discount": 70
+      },
+      "Gymshark": {
+        "discount": 70
+      },
+      "Miu miu": {
+        "discount": 70
+      },
+      "Starlink": {
+        "discount": 50
+      },
+      "Jellycat": {
+        "discount": 70
+      },
+      "Lego": {
+        "discount": 70
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "543515384205017088": {
+    "global_keywords": {
+      "Cole Buxton": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {
+      "1323981989048483840": [
+        {
+          "keyword": "Roksan",
+          "discount": 50
+        }
+      ]
+    },
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "361951961983221761": {
+    "global_keywords": {
+      "Patagonia": {
+        "discount": 0
+      },
+      "Zone3": {
+        "discount": 0
+      },
+      "Barbour": {
+        "discount": 40
+      },
+      "The North Face": {
+        "discount": 45
+      },
+      "Hoka": {
+        "discount": 45
+      },
+      "Timex": {
+        "discount": 20
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "1409574285017616418": {
+    "global_keywords": {
+      "70": {
+        "discount": 70
+      },
+      "80": {
+        "discount": 70
+      },
+      "90": {
+        "discount": 70
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "540667208414789636": {
+    "global_keywords": {
+      "Nike": {
+        "discount": 50
+      },
+      "Adidas": {
+        "discount": 50
+      },
+      "Stone island": {
+        "discount": 50
+      },
+      "YSL": {
+        "discount": 50
+      },
+      "CP Company": {
+        "discount": 50
+      },
+      "Fragrance": {
+        "discount": 50
+      },
+      "EDP": {
+        "discount": 50
+      },
+      "EDT": {
+        "discount": 50
+      },
+      "Valentino": {
+        "discount": 50
+      },
+      "govee": {
+        "discount": 50
+      },
+      "Dyson": {
+        "discount": 50
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "433281977118883841": {
+    "global_keywords": {
+      "salomon": {
+        "discount": 60
+      },
+      "jellycat": {
+        "discount": 60
+      },
+      "stone island": {
+        "discount": 60
+      },
+      "dyson": {
+        "discount": 65
+      },
+      "govee": {
+        "discount": 60
+      },
+      "samsonite": {
+        "discount": 60
+      },
+      "eastpak": {
+        "discount": 65
+      },
+      "oakley": {
+        "discount": 50
+      },
+      "hue": {
+        "discount": 60
+      },
+      "barbour": {
+        "discount": 60
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "255759862976348161": {
+    "global_keywords": {
+      "87601103": {
+        "discount": 0
+      },
+      "moncler": {
+        "discount": 0
+      },
+      "fendi": {
+        "discount": 0
+      },
+      "prada": {
+        "discount": 0
+      },
+      "hermes": {
+        "discount": 0
+      },
+      "burberry": {
+        "discount": 0
+      },
+      "samsonite": {
+        "discount": 0
+      },
+      "eastpak": {
+        "discount": 0
+      },
+      "canada goose": {
+        "discount": 0
+      },
+      "moose knuckles": {
+        "discount": 0
+      },
+      "govee": {
+        "discount": 0
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "432622333560225803": {
+    "global_keywords": {
+      "lego": {
+        "discount": 0
+      },
+      "90%": {
+        "discount": 0
+      },
+      "91%": {
+        "discount": 0
+      },
+      "92%": {
+        "discount": 0
+      },
+      "93%": {
+        "discount": 0
+      },
+      "94%": {
+        "discount": 0
+      },
+      "95%": {
+        "discount": 0
+      },
+      "96%": {
+        "discount": 0
+      },
+      "97%": {
+        "discount": 0
+      },
+      "98%": {
+        "discount": 0
+      },
+      "99%": {
+        "discount": 0
+      },
+      "samsonite": {
+        "discount": 0
+      },
+      "luggage": {
+        "discount": 0
+      },
+      "drone": {
+        "discount": 0
+      },
+      "luggage set": {
+        "discount": 0
+      },
+      "max mara": {
+        "discount": 0
+      },
+      "smeg": {
+        "discount": 0
+      },
+      "dyson": {
+        "discount": 0
+      },
+      "shark": {
+        "discount": 0
+      },
+      "remote control racer": {
+        "discount": 0
+      },
+      "Formula 1": {
+        "discount": 0
+      },
+      "redbull": {
+        "discount": 0
+      },
+      "mercedes": {
+        "discount": 0
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "706823760636018748": {
+    "global_keywords": {
+      "90": {
+        "discount": 70
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
+  },
+  "1062487356852150354": {
+    "global_keywords": {
+      "Dyson": {
+        "discount": 50
+      },
+      "Salomon": {
+        "discount": 50
+      },
+      "Oakley": {
+        "discount": 50
+      },
+      "The north face": {
+        "discount": 50
+      },
+      "Jellycat": {
+        "discount": 50
+      },
+      "Jordan": {
+        "discount": 70
+      },
+      "Stone island": {
+        "discount": 60
+      },
+      "Stussy": {
+        "discount": 70
+      },
+      "New balance": {
+        "discount": 50
+      },
+      "Pokemon": {
+        "discount": 50
+      },
+      "Karcher": {
+        "discount": 50
+      },
+      "Prada": {
+        "discount": 60
+      },
+      "Balenciaga": {
+        "discount": 70
+      },
+      "Gucci": {
+        "discount": 70
+      },
+      "Loewe": {
+        "discount": 60
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [
+      "hurley"
+    ],
+    "blacklisted_channels": []
+  },
+  "912441711354073088": {
+    "global_keywords": {
+      "Govee Glide Hexa Pro LED Light Panels": {
+        "discount": 70
+      },
+      "Linea Duty Shelf Frame": {
+        "discount": 80
+      },
+      "Govee Y Shape Light Panel": {
+        "discount": 75
+      },
+      "4054278808734": {
+        "discount": 75
+      },
+      "Kärcher K4 Power Control Car & Home Corded Pressure washer 1.8kW": {
+        "discount": 75
+      },
+      "Nike Air VaporMax Plus": {
+        "discount": 70
+      },
+      "Nike Air VaporMax 2023": {
+        "discount": 70
+      }
+    },
+    "channel_keywords": {},
+    "negative_keywords": [],
+    "blacklisted_channels": []
   }
 }

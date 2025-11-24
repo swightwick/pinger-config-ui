@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			sans: ['var(--font-mulish)', 'sans-serif'],
+  		},
   		colors: {
   			green: '#22C45C',
   			'dark-navy': '#0D1117',
