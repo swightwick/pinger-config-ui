@@ -561,7 +561,7 @@ export default function Home() {
               )} */}
 
               <div className='flex flex-row items-center justify-center gap-2 text-white'>
-                <img src={session.user?.image} alt="User Image" className="h-8 w-8 rounded-full " />
+                <img src={session.user?.image || ''} alt="User Image" className="h-8 w-8 rounded-full " />
                 <span>{session.user?.name}</span>
               </div>
 
